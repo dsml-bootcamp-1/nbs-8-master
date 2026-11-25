@@ -7,3 +7,8 @@
 s-806/models/
 .streamlit/secrets.toml
 __pycache__/
+
+# local environments and agent skill symlinks
+.venv/
+.agents/
+.claude/

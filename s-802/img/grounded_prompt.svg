@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 430" width="1060" height="430" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#212529"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1060" height="430" rx="12" fill="#ffffff"/>
+
+  <text x="20" y="30" font-size="15" font-weight="bold" fill="#212529">The prompt</text>
+  <text x="112" y="30" font-size="15" fill="#6c757d">&#183;&#160;&#160;what answer() sends to the model</text>
+
+  <!-- 1. Rules -->
+  <rect x="20" y="44" width="620" height="120" rx="8" fill="#f3f0ff" stroke="#7048e8" stroke-width="1.5"/>
+  <text x="34" y="66" font-size="13" font-weight="bold" fill="#7048e8">1  Rules<tspan dx="8" font-weight="normal" fill="#6c757d">&#183;&#160;&#160;system message</tspan></text>
+  <g font-family="Menlo, Consolas, monospace" font-size="11.5" fill="#212529">
+    <text x="34" y="88">You answer questions about the EU AI Act using ONLY the excerpts provided.</text>
+    <text x="34" y="104">- Base every statement on the excerpts. Do not use outside knowledge.</text>
+    <text x="34" y="120">- After each statement, cite the excerpt id(s) in square brackets.</text>
+    <text x="34" y="136">- If the excerpts do not contain the answer, reply exactly</text>
+    <text x="48" y="152">"I don't know based on the provided document."</text>
+  </g>
+
+  <!-- 2. Context -->
+  <rect x="20" y="176" width="620" height="158" rx="8" fill="#e8f0fd" stroke="#1c64d9" stroke-width="1.5"/>
+  <text x="34" y="198" font-size="13" font-weight="bold" fill="#1c64d9">2  Context<tspan dx="8" font-weight="normal" fill="#6c757d">&#183;&#160;&#160;the retrieved chunks, each with its id, section and page</tspan></text>
+  <rect x="32" y="227" width="80" height="16" rx="3" fill="#b2f2bb"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="11.5" fill="#212529">
+    <text x="34" y="220">Excerpts:</text>
+    <text x="34" y="239" font-weight="bold">[chunk-657] (Article 99, page 115)</text>
+    <text x="34" y="256">&#8230; Non-compliance with the prohibition of the AI practices referred to</text>
+    <text x="34" y="272">in Article 5 shall be subject to administrative fines of up to</text>
+    <text x="34" y="288">EUR 35 000 000 or, if the offender is an undertaking, up to 7 % of</text>
+    <text x="34" y="304">its total worldwide annual turnover &#8230;</text>
+  </g>
+  <text x="34" y="324" font-size="12" fill="#6c757d">&#8230; and 4 more excerpts in the same format: chunk-668, chunk-665, chunk-667, chunk-338</text>
+
+  <!-- 3. Question -->
+  <rect x="20" y="346" width="620" height="62" rx="8" fill="#fff1e8" stroke="#d9480f" stroke-width="1.5"/>
+  <text x="34" y="368" font-size="13" font-weight="bold" fill="#d9480f">3  Question<tspan dx="8" font-weight="normal" fill="#6c757d">&#183;&#160;&#160;at the end of the user message</tspan></text>
+  <text x="34" y="392" font-family="Menlo, Consolas, monospace" font-size="11.5" fill="#212529">Question: How much can a company be fined for using a banned AI practice?</text>
+
+  <!-- The whole prompt goes to the LLM -->
+  <path d="M648,44 L656,44 L656,408 L648,408" fill="none" stroke="#212529" stroke-width="1.5"/>
+  <line x1="656" y1="210" x2="698" y2="210" stroke="#212529" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <text x="700" y="66" font-size="12.5" fill="#495057">About 1,100 input tokens with five excerpts:</text>
+  <text x="700" y="84" font-size="12.5" fill="#495057">two hundredths of a cent with gpt-5.4-nano.</text>
+  <rect x="698" y="111" width="80" height="16" rx="3" fill="#b2f2bb"/>
+  <text x="700" y="123" font-size="12.5" fill="#495057"><tspan font-family="Menlo, Consolas, monospace" font-weight="bold" fill="#212529">[chunk-657]</tspan>&#160;&#160;is the same id in the context</text>
+  <text x="700" y="141" font-size="12.5" fill="#495057">and in the answer, so anyone can open the law</text>
+  <text x="700" y="159" font-size="12.5" fill="#495057">at page 115 and check it.</text>
+
+  <rect x="700" y="180" width="340" height="60" rx="8" fill="#212529"/>
+  <text x="844" y="216" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="end">LLM</text>
+  <text x="856" y="216" font-size="15" fill="#ced4da">&#183;&#160;&#160;gpt-5.4-nano</text>
+
+  <line x1="870" y1="241" x2="870" y2="266" stroke="#212529" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Answer -->
+  <rect x="700" y="270" width="340" height="138" rx="8" fill="#e6f4ea" stroke="#2b8a3e" stroke-width="1.5"/>
+  <text x="714" y="292" font-size="13" font-weight="bold" fill="#2b8a3e">Answer</text>
+  <g font-size="12" fill="#212529">
+    <text x="714" y="312">For non-compliance with the prohibition of the AI</text>
+    <text x="714" y="328">practices referred to in Article 5, administrative</text>
+    <text x="714" y="344">fines can be up to EUR 35,000,000, or up to 7% of the</text>
+    <text x="714" y="360">offender's total worldwide annual turnover in the</text>
+    <text x="714" y="376">preceding financial year, whichever is higher.</text>
+  </g>
+  <rect x="712" y="384" width="82" height="16" rx="3" fill="#b2f2bb"/>
+  <text x="714" y="396" font-family="Menlo, Consolas, monospace" font-size="12" font-weight="bold" fill="#212529">[chunk-657]</text>
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="300" rx="12" fill="#ffffff"/>
+
+  <text x="110" y="28" font-size="14" fill="#212529"><tspan font-weight="bold">size = 150 words, overlap = 30 words</tspan>: each chunk starts 120 words after the previous one</text>
+
+  <!-- Guides at the overlap boundaries (1 word = 1.5 px, word 0 at x = 110) -->
+  <g stroke="#ced4da" stroke-width="1" stroke-dasharray="3 3">
+    <line x1="290" y1="74" x2="290" y2="258"/>
+    <line x1="335" y1="74" x2="335" y2="258"/>
+    <line x1="470" y1="74" x2="470" y2="258"/>
+    <line x1="515" y1="74" x2="515" y2="258"/>
+    <line x1="650" y1="74" x2="650" y2="258"/>
+    <line x1="695" y1="74" x2="695" y2="258"/>
+    <line x1="830" y1="74" x2="830" y2="258"/>
+    <line x1="875" y1="74" x2="875" y2="258"/>
+  </g>
+
+  <!-- The document as one long strip of words -->
+  <text x="100" y="66" font-size="13" fill="#495057" text-anchor="end">document</text>
+  <rect x="110" y="48" width="810" height="26" rx="4" fill="#f1f3f5" stroke="#adb5bd"/>
+  <g fill="#9ec0f5">
+    <rect x="290" y="49" width="45" height="24"/>
+    <rect x="470" y="49" width="45" height="24"/>
+    <rect x="650" y="49" width="45" height="24"/>
+    <rect x="830" y="49" width="45" height="24"/>
+  </g>
+  <text x="930" y="66" font-size="16" fill="#495057">&#8230;</text>
+
+  <!-- Chunks -->
+  <g stroke="#1c64d9" stroke-width="1.5">
+    <rect x="110" y="96" width="225" height="28" rx="4" fill="#e8f0fd"/>
+    <rect x="290" y="136" width="225" height="28" rx="4" fill="#e8f0fd"/>
+    <rect x="470" y="176" width="225" height="28" rx="4" fill="#e8f0fd"/>
+    <rect x="650" y="216" width="225" height="28" rx="4" fill="#e8f0fd"/>
+  </g>
+  <g fill="#9ec0f5">
+    <rect x="290" y="97" width="44" height="26"/>
+    <rect x="291" y="137" width="44" height="26"/>
+    <rect x="470" y="137" width="44" height="26"/>
+    <rect x="471" y="177" width="44" height="26"/>
+    <rect x="650" y="177" width="44" height="26"/>
+    <rect x="651" y="217" width="44" height="26"/>
+    <rect x="830" y="217" width="44" height="26"/>
+  </g>
+  <g font-size="12" fill="#212529">
+    <text x="120" y="115"><tspan font-family="Menlo, Consolas, monospace" font-weight="bold">chunk-0</tspan>&#160;&#160;words 0&#8211;149</text>
+    <text x="345" y="155"><tspan font-family="Menlo, Consolas, monospace" font-weight="bold">chunk-1</tspan>&#160;&#160;120&#8211;269</text>
+    <text x="525" y="195"><tspan font-family="Menlo, Consolas, monospace" font-weight="bold">chunk-2</tspan>&#160;&#160;240&#8211;389</text>
+    <text x="705" y="235"><tspan font-family="Menlo, Consolas, monospace" font-weight="bold">chunk-3</tspan>&#160;&#160;360&#8211;509</text>
+  </g>
+
+  <!-- Step between two chunk starts -->
+  <line x1="112" y1="150" x2="288" y2="150" stroke="#495057" stroke-width="1.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="200" y="143" font-size="12" fill="#495057" text-anchor="middle">step = 150 &#8722; 30 = 120 words</text>
+
+  <!-- Overlap callout -->
+  <g font-size="12" fill="#495057">
+    <text x="120" y="200"><tspan font-weight="bold" fill="#1c64d9">Shaded: the 30-word overlap.</tspan></text>
+    <text x="120" y="217">Those words end one chunk and start the next,</text>
+    <text x="120" y="234">so a sentence cut at a boundary is whole in one of them.</text>
+  </g>
+  <line x1="430" y1="212" x2="644" y2="212" stroke="#495057" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <!-- Word positions -->
+  <line x1="110" y1="258" x2="920" y2="258" stroke="#adb5bd"/>
+  <g font-size="11" fill="#6c757d" text-anchor="middle">
+    <text x="110" y="276">0</text>
+    <text x="290" y="276">120</text>
+    <text x="335" y="276">150</text>
+    <text x="470" y="276">240</text>
+    <text x="515" y="276">270</text>
+    <text x="650" y="276">360</text>
+    <text x="695" y="276">390</text>
+    <text x="830" y="276">480</text>
+    <text x="875" y="276">510</text>
+  </g>
+  <text x="920" y="292" font-size="11" fill="#6c757d" text-anchor="end">word position in the document</text>
+</svg>

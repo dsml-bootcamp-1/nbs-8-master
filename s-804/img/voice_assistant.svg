@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 320" width="1140" height="320" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#212529"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1140" height="320" rx="12" fill="#ffffff"/>
+
+  <text x="14" y="30" font-size="15" font-weight="bold" fill="#212529">A voice assistant</text>
+  <text x="148" y="30" font-size="15" fill="#6c757d">&#183;&#160;&#160;three API calls, audio in and audio out</text>
+
+  <!-- Policies -->
+  <rect x="470" y="58" width="200" height="54" rx="8" fill="#fff3bf" stroke="#e67700" stroke-width="1.5"/>
+  <text x="570" y="81" font-size="13" font-weight="bold" fill="#e67700" text-anchor="middle">POLICIES</text>
+  <text x="570" y="99" font-size="12" fill="#495057" text-anchor="middle">in the system prompt</text>
+  <line x1="570" y1="112" x2="570" y2="148" stroke="#212529" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <g font-size="12" fill="#495057" text-anchor="middle">
+    <!-- Microphone -->
+    <rect x="14" y="150" width="140" height="78" rx="8" fill="#f3f0ff" stroke="#7048e8" stroke-width="1.5"/>
+    <text x="84" y="180" font-size="14" font-weight="bold" fill="#7048e8">Microphone</text>
+    <text x="84" y="199">the customer asks</text>
+    <text x="84" y="216" font-family="Menlo, Consolas, monospace" font-size="10.5">customer_question.mp3</text>
+
+    <!-- Speech to text -->
+    <rect x="176" y="150" width="140" height="78" rx="8" fill="#212529"/>
+    <text x="246" y="185" font-size="14" font-weight="bold" fill="#ffffff">Speech to text</text>
+    <text x="246" y="205" font-family="Menlo, Consolas, monospace" font-size="10.5" fill="#ced4da">gpt-4o-mini-transcribe</text>
+
+    <!-- Text question -->
+    <rect x="338" y="150" width="140" height="78" rx="8" fill="#fff1e8" stroke="#d9480f" stroke-width="1.5"/>
+    <text x="408" y="185" font-size="14" font-weight="bold" fill="#d9480f">Text question</text>
+    <text x="408" y="205">"My card was blocked..."</text>
+
+    <!-- LLM -->
+    <rect x="500" y="150" width="140" height="78" rx="8" fill="#212529"/>
+    <text x="570" y="185" font-size="15" font-weight="bold" fill="#ffffff">LLM</text>
+    <text x="570" y="205" font-family="Menlo, Consolas, monospace" font-size="10.5" fill="#ced4da">gpt-5.4-nano</text>
+
+    <!-- Text answer -->
+    <rect x="662" y="150" width="140" height="78" rx="8" fill="#e6f4ea" stroke="#2b8a3e" stroke-width="1.5"/>
+    <text x="732" y="185" font-size="14" font-weight="bold" fill="#2b8a3e">Text answer</text>
+    <text x="732" y="205">from the policies</text>
+
+    <!-- Text to speech -->
+    <rect x="824" y="150" width="140" height="78" rx="8" fill="#212529"/>
+    <text x="894" y="185" font-size="14" font-weight="bold" fill="#ffffff">Text to speech</text>
+    <text x="894" y="205" font-family="Menlo, Consolas, monospace" font-size="10.5" fill="#ced4da">gpt-4o-mini-tts</text>
+
+    <!-- Speaker -->
+    <rect x="986" y="150" width="140" height="78" rx="8" fill="#f3f0ff" stroke="#7048e8" stroke-width="1.5"/>
+    <text x="1056" y="180" font-size="14" font-weight="bold" fill="#7048e8">Speaker</text>
+    <text x="1056" y="199">the customer hears</text>
+    <text x="1056" y="216" font-family="Menlo, Consolas, monospace" font-size="10.5">assistant_answer.mp3</text>
+  </g>
+
+  <g stroke="#212529" stroke-width="2" marker-end="url(#arrow)">
+    <line x1="154" y1="189" x2="174" y2="189"/>
+    <line x1="316" y1="189" x2="336" y2="189"/>
+    <line x1="478" y1="189" x2="498" y2="189"/>
+    <line x1="640" y1="189" x2="660" y2="189"/>
+    <line x1="802" y1="189" x2="822" y2="189"/>
+    <line x1="964" y1="189" x2="984" y2="189"/>
+  </g>
+
+  <!-- Call labels -->
+  <g font-size="12" font-weight="bold" fill="#212529" text-anchor="middle">
+    <text x="246" y="252">API call 1</text>
+    <text x="570" y="252">API call 2</text>
+    <text x="894" y="252">API call 3</text>
+  </g>
+
+  <!-- Notes -->
+  <g font-size="12.5" fill="#495057">
+    <text x="14" y="288">Audio only at the two ends: everything in the middle is text, so prompts, policies and structured outputs work as before.</text>
+    <text x="14" y="306">Each call adds latency; realtime models listen and speak in one connection.</text>
+  </g>
+</svg>
